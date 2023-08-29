@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h2>Contact Me</h2>
-      <p>If you'd like to get in touch, feel free to use the form below or reach out to me on social media.</p>
+      <p>If you'd like to get in touch, feel free to use the form below!</p>
       
       <ContactForm>
         <div>
