@@ -2,11 +2,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: var(--background-color);
 }
 
-/* Give some space for the content when the navbar is sticky */
-.App {
-  padding-top: 80px; /* Adjust as needed */
+/* Apply the Modern and Elegant color scheme */
+:root {
+  --primary-color: #2E3A4D; /* Dark Blue */
+  --secondary-color: #F8A055; /* Orange */
+  --accent-color: #00BFA6; /* Turquoise */
+  --background-color: #F4F6F9; /* Light Gray */
 }
 
 /* Hide the navbar after scrolling down */
