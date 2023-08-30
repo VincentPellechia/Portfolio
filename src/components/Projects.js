@@ -1,44 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProjectCard from './ProjectCard';
 
 const ProjectContainer = styled.section`
   text-align: center;
   padding: 2rem;
 `;
 
-const ProjectCard = styled.div`
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin: 1rem;
-`;
+const projects = [
+  {
+    title: 'Project 1',
+    shortDescription: 'A web application for...',
+    description: 'A detailed description of Project 1...',
+    link: 'https://github.com/yourusername/project1',
+    pictures: ["pic1", "pic2"],
+    videos: ["vid1"],
+
+    // Add more project properties here
+  },
+  {
+    title: 'Project 2',
+    shortDescription: 'A mobile app that...',
+    description: 'A detailed description of Project 2...',
+    link: 'https://github.com/yourusername/project1',
+    pictures: ["pic1", "pic2"],
+    videos: ["vid1"],
+    // Add more project properties here
+  },
+  // Add more projects here
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: 'Project 1',
-      description: 'A web application for...',
-      link: 'https://github.com/yourusername/project1',
-    },
-    {
-      title: 'Project 2',
-      description: 'A mobile app that...',
-      link: 'https://github.com/yourusername/project2',
-    },
-    // Add more projects here
-  ];
-
   return (
-    <ProjectContainer id="projects">
+    <ProjectContainer>
       <h2>Projects</h2>
       <div>
         {projects.map((project, index) => (
-          <ProjectCard key={index}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
-          </ProjectCard>
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </ProjectContainer>
