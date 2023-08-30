@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      const isVisible = currentScrollPos < 300 || currentScrollPos < prevScrollPos;
+      const isVisible = currentScrollPos < 100 || currentScrollPos < prevScrollPos;
       
       setPrevScrollPos(currentScrollPos);
       setVisible(isVisible);
