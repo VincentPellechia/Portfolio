@@ -1,22 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import angular from '../images/angular.png';
-import aws from '../images/aws.png';
-import azure from '../images/azure.png';
-import cpp from '../images/cpp.png';
-import cs from '../images/cs.png';
-import css from '../images/css.png';
-import ember from '../images/ember.png';
-import git from '../images/git.png';
-import glimmer from '../images/glimmer.png';
-import html5 from '../images/html5.png';
-import java from '../images/java.png';
-import javascript from '../images/javascript.png';
-import mongodb from '../images/mongodb.png';
-import node from '../images/node.png';
-import php from '../images/php.png';
-import react from '../images/react.png';
-import sql from '../images/sql.png';
+import technologyImages from '../utils/images';
 
 const SkillsContainer = styled.section`
   text-align: center;
@@ -24,14 +8,16 @@ const SkillsContainer = styled.section`
 `;
 
 const SkillsCard = styled.div`
-  border: 1px solid #ccc;
+  border: 3px solid transparent;
+  border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
-  filter: grayscale(100%); /* Apply grayscale filter */
-  transition: filter 0.3s; /* Add a transition effect */
+  filter: grayscale(100%);
+  transition: filter 0.5s;
   
   &:hover {
-    filter: none; /* Remove filter on hover */
+    filter: none;
+    border: 3px solid;
   }
 `;
 
@@ -48,22 +34,25 @@ const Skills = () => {
   const skillCategories = [
     {
       title: 'Front End',
-      technologies: [react, html5, css, angular, ember, glimmer],
+      technologies: ['react', 'html5', 'css', 'angular', 'ember', 'glimmer'],
+      background: "var(--primary-color)",
     },
     {
       title: 'Back End',
-      technologies: [node, cs, php, java, cpp, mongodb, sql],
+      technologies: ['node', 'cs', 'php', 'java', 'cpp', 'mongodb', 'sql'],
+      background: "var(--accent-color)",
     },
     {
       title: 'Miscellaneous',
-      technologies: [git, azure, aws],
+      technologies: ['git', 'azure', 'aws'],
+      background: "var(--secondary-color)",
     },
     // Add more skills here
   ];
 
   const renderTechnologyIcons = (technologies) => {
-    return technologies.map((techImage, index) => (
-      <SkillIcon key={index} src={techImage} alt={techImage} className="icon" width={60} height={60} />
+    return technologies.map((techName, index) => (
+      <SkillIcon key={index} src={technologyImages[techName]} alt={techName} className="icon" width={60} height={60} />
     ));
   };
 
@@ -72,7 +61,7 @@ const Skills = () => {
       <h2>Skills</h2>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         {skillCategories.map((category, index) => (
-          <SkillsCard key={index}>
+          <SkillsCard style={{color: category.background}} key={index}>
             <SkillTitle>{category.title}</SkillTitle>
             <div style={{ display: 'flex', justifyContent: 'space-around' }}>
               {renderTechnologyIcons(category.technologies)}
