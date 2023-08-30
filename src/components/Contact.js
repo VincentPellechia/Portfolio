@@ -2,38 +2,42 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.section`
+  background: linear-gradient(to bottom, #F4F6F9, #D8E2E7);
+  padding: 4rem 0;
   text-align: center;
-  padding: 2rem;
 `;
 
-const ContactForm = styled.form`
-  max-width: 400px;
+const Heading = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+`;
+
+const Subheading = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+`;
+
+const CalendlyContainer = styled.div`
+  max-width: 600px;
   margin: 0 auto;
 `;
 
-const Contact = () => {
+const ContactMe = () => {
   return (
     <ContactContainer id="contact">
-      <h2>Contact Me</h2>
-      <p>If you'd like to get in touch, feel free to use the form below!</p>
-      
-      <ContactForm>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required />
-        </div>
-        <button type="submit">Send Message</button>
-      </ContactForm>
+      <Heading>Contact Me</Heading>
+      <Subheading>Schedule a Meeting</Subheading>
+      <p>If you'd like to discuss a project or have a virtual meeting, please use the scheduler below to choose a time slot:</p>
+      <CalendlyContainer>
+        {/* Add your Calendly embed code here */}
+        <iframe
+          title="Calendly Scheduler"
+          src="https://calendly.com/vincent-pellechia/30min"
+          style={{ width: '100%', height: '400px', border: '0', borderRadius: '10px'}}
+        ></iframe>
+      </CalendlyContainer>
     </ContactContainer>
   );
 };
 
-export default Contact;
+export default ContactMe;
