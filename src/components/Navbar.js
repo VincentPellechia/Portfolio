@@ -5,7 +5,7 @@ const NavbarContainer = styled.nav`
   position: fixed;
   top: ${props => (props.visible ? '0' : '-100px')};
   width: 100%;
-  background-color: #333;
+  background-color: var(--primary-color);
   color: white;
   padding: 1rem;
   z-index: 1000;
